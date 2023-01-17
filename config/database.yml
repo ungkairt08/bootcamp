@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  host: <%= ENV['DB_HOST'] %>
+  port: <%= ENV['DB_PORT'] %>
+  username: postgres
+  password: 1234
+
+development:
+  <<: *default
+  database: lusiadas
+
+test:
+  <<: *default
+  database: lusiadas
+
+production:
+  <<: *default
+  database: lusiadas
